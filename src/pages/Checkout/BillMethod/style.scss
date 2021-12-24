@@ -1,0 +1,12 @@
+@import '../../../assets/css/variable';
+
+.form{
+    &:not(:first-child) {
+        margin-top: $spaceBlock;
+    }
+    &__method{
+        & .method:not(:first-child){
+            margin-top: 16px;
+        }
+    }
+}

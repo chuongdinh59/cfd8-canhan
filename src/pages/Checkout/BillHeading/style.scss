@@ -1,0 +1,23 @@
+@import '../../../assets/css/variable';
+
+
+.bill__heading{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    &-title{
+        font-size: 22px;
+        font-weight: 600;
+        padding-bottom: 4px;
+    }
+    &-alert{
+        font-size: 12px;
+        color: $blurColor;
+    }
+    &-step{
+        font-size: 12px;
+        color: $blurColor;
+    }
+}

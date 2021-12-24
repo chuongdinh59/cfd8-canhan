@@ -1,0 +1,23 @@
+@import '../../../assets/css/style.scss';
+
+.headline{
+    padding: 64px 0;
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 32px;
+    }
+    &__title{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__btn{
+        display: flex;
+        align-items: center;
+        gap: 0 6px;
+    }
+    &__list{
+        display: flex;
+        gap: 0 32px;
+    }
+}

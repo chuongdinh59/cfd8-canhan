@@ -1,0 +1,25 @@
+@import '../../assets/css/variable';
+
+.information{
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0px;
+        border-bottom: 1px solid rgba(169, 169, 169, 0.1);
+    &__left{
+        display: flex;
+        gap: 0 33px;
+    }
+    &__item:first-child .information__link{
+        color: $greenColor;
+    }
+    &__right{
+        display: flex;
+        gap: 0 38px;
+        & .information__link{
+            color: $greenColor;
+        }
+    }
+    &__link{
+        font-size: 12px;
+    }
+}

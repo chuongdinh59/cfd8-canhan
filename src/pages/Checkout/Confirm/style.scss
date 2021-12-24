@@ -1,0 +1,28 @@
+@import '../../../assets/css/variable';
+.form{
+    &__confirm{
+        
+        &  label:not(:first-child){
+            margin-top: 16px;
+        }
+    }
+    button{
+        margin: 32px 0;
+    }
+    &__policy{
+        max-width: 212px;
+        line-height: 1;
+        & .commit{
+            font-weight: 700;
+            padding: 10px 0;
+        }
+        & .policy{
+            font-size: 12px;
+            color: $blurColor;
+        }
+        img{
+            width: 30px;
+        }
+       
+    }
+}

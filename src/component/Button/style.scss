@@ -1,0 +1,79 @@
+@import '../../assets/css/variable';
+
+
+
+.button{
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    border-radius: $radius;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    &.size{
+        &-small{
+            height: $btnS-Height;
+            line-height: $btnS-Height;
+            padding: 0 8px;
+           
+        }
+        &-medium{
+            height: $btnM-Height;
+            line-height: $btnM-Height;
+            padding: 0 16px;
+        }
+        &-large{
+            height: $btnL-Height;
+            line-height: $btnL-Height;
+            padding: 0 46px;
+
+        }
+    }
+    &.type{
+        &-icon-left{
+            svg{
+                transform: rotate(270deg) !important;
+                & path{
+                    stroke-width: 5.5;
+                }
+            }
+        }
+        &-icon-right{
+            svg{
+                transform: rotate(270deg) !important;
+
+                & path{
+                    stroke-width: 5.5;
+                }
+
+            }
+        }
+    }
+    &.bgcolor{
+        &-default{
+            background-color: transparent;
+            border: 2px solid $borderDefault;
+            
+        }
+        &-bright{
+            background-color: $greenColor;
+            border: 2px solid $borderBright;
+
+        }
+        &-store{
+            background-color: $grayBlur;
+
+        }
+    }
+    &.color{
+        &-default{
+            color: $primaryColor;
+        }
+        &-white{
+            color: $lightColor;
+        }
+    }
+    svg{
+        width: 16px;
+    }
+}

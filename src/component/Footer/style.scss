@@ -1,0 +1,38 @@
+@import '../../assets/css/style.scss';
+
+
+.footer{
+    padding: 64px 0;
+    p{
+        color: $greenColor;
+        font-weight: 400;
+        margin-top: 16px;
+    }
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__heading{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        @include line(18,27);
+    }
+
+    & .product__tag{
+        margin-top: 48px;
+    }
+    & .tag__list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .license{
+        margin-top: 46px;
+        
+        color: $primaryColor;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

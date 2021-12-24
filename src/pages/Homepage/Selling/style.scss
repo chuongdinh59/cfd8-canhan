@@ -1,0 +1,16 @@
+@import '../../../assets/css/variable';
+
+
+
+.sell{
+    padding: 64px 0;
+    &__details{
+        display: flex;
+        gap: 0 32px;
+    }
+    &__list{
+        flex: 1;
+        display: flex;
+        gap: 0 32px;
+    }
+}

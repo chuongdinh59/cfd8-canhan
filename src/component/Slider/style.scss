@@ -1,0 +1,33 @@
+// @import '../../assets/css/style.scss';
+
+
+.slider{
+    padding-bottom: 64px;
+    &__heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 64px 0;
+    }
+    &__title{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__main{
+        display: flex;
+        align-items: center;
+        gap: 0 32px;
+        position: relative;
+
+    }
+    // &__btn{
+    //     margin-left: -15px;
+    //     position: absolute;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     width: calc(100% + 30px) ;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    // }
+}

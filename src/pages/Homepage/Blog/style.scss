@@ -1,0 +1,16 @@
+@import '../../../assets/css/style.scss';
+
+.blog{
+    padding: 64px 0px;
+    &__heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 32px;
+    }
+    &__main{
+        display: grid;
+        grid-template-columns: 2.5fr 1fr 2fr;
+        grid-gap: 0 32px;
+    }
+}

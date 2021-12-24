@@ -1,0 +1,79 @@
+@import '../../assets/css/variable';
+
+.header{
+    
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $headerHeight;
+    }
+    &__search{
+        display: flex;
+        align-items: center;
+        min-width:  500px;
+        height: calc(42px - 10px);
+        background-color: #F9F9F9;
+        border: 1px solid $blurColor;
+        padding: 5px 10px;
+        border-radius: 10px;
+        gap: 0 8px;
+        svg{
+            width: 16px;
+        }
+    }
+    &__category-btn{
+        display: flex;
+        align-items: center;
+        flex: 2;
+        font-weight: 700;
+        border-right: 1px solid $blurColor;
+        
+    }
+    & .search__line{
+        flex: 4;
+        font-family: $secondFont;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+    &__search-btn{
+        flex: 0.5;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__control{
+        display: flex;
+        gap: 0 35px;
+        cursor: pointer;
+        a{
+            font-size: 25px;
+            padding: 10px;
+        }
+        svg{
+            width: 22px;
+        }
+    }
+    &__cart{
+        position: relative;
+        & .bill{
+            position: absolute;
+            font-size: 16px;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $orangeColor;
+            color: #fff;
+            margin: 0 auto;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+}
+
+}

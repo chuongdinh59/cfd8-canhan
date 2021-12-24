@@ -1,0 +1,32 @@
+@import '../../assets/css/variable';
+
+.list{
+    &__name{
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    &__nav{
+        display: flex;
+        flex-direction: column;
+        gap: 12px 0;
+        margin-bottom: 30px;
+        width: 270px;
+    }
+    &__link{
+        color: $greenColor;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &__btn{
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0 12px;
+        padding: 16px;
+        border-radius: 10px;
+        background-color: rgba(169,169,169,0.1);
+        max-width: 160px;
+    }
+}

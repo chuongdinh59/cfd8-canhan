@@ -1,0 +1,18 @@
+@import './variable';
+body{
+    max-width: 1290px;
+    padding: 0 15px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: $primaryColor;
+	background-color: #fff;
+	line-height: 22.5px;
+}
+.container{
+    max-width: $container-width;
+    padding: 0 15px;
+    margin: 0 auto;
+
+}

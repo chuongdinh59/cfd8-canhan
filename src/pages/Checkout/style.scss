@@ -1,0 +1,17 @@
+@import '../../assets/css/style.scss';
+
+
+
+.checkout{
+    &-container{
+       display: grid;
+       grid-template-columns: 2.2fr 1.6fr; 
+       gap: 0 32px;
+    }
+}
+.footer{
+    p{
+        font-size: 14px;
+        color: $primaryColor;
+    }
+}

@@ -1,0 +1,108 @@
+@import '../../../../assets/css/style.scss';
+.post{
+    .post__author{
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+        padding-top: 16px;
+        font-size: 12px;
+    }
+    &-small{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0 24px;
+        padding-bottom: 32px;
+        .post__img{
+            img{
+                height: 96px;
+                width: 96px;
+                border-radius: $radius;
+                overflow: hidden;
+            }
+        }
+        .post__title {
+            font-size: 15px;
+            max-width: 80%;
+        }
+        
+    }
+    &-medium{
+        .post__title{
+            font-size: 18px;
+            font-weight: 600;
+            @include line(22,33);
+            color: $primaryColor;
+        }
+        .post__img{
+            height: 180px;
+            border-radius: $radius;
+            overflow: hidden;
+        }
+        .tag{
+            display: inline-block;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        
+    }
+    &-large{
+        position: relative;
+        min-height: 400px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;   
+        border-radius: $radius;
+        overflow: hidden;
+        .post__img{
+            position: absolute;
+            height: 100%;
+            z-index: 0;
+            img{
+                object-fit: cover;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;                
+                background-image: linear-gradient(to top , #000 , transparent);
+
+            }
+        }
+        .post__desc{
+            padding: 24px;
+            position: relative;
+            margin-top: auto;
+            color: $lightColor; 
+        }
+        .post__title{
+            font-size: 22px;
+            font-weight: 700;
+            @include line(22,33);
+        }
+        .post__author{
+           
+            img{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .post__info{
+            display: flex;
+            align-items: center;
+            gap: 0 8px;
+        }
+        .tag{
+            position: absolute;
+            z-index: 5;
+            top: 24px;
+            left: 24px;
+        }
+    }
+    
+   
+}

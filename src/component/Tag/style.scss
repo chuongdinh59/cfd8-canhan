@@ -1,0 +1,54 @@
+@import '../../assets/css/variable';
+@import '../../assets/css/mixin';
+
+
+.tag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0 8px;
+    border-radius: $radius;
+    
+    span{
+        margin-left: 8px;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    &.size{
+        &-small{
+           @include heightcenter($tagS-Height);
+           padding: 0 8px;
+        }
+        &-large{
+            @include heightcenter($tagL-Height);
+            padding: 0 10px;
+        }
+    }
+    &.bg{
+        &-default{
+            background-color: transparent;
+            border-radius: $radius;
+            border: 1px solid #EBEBEB;
+
+        }
+        &-bright{
+            background-color: #F4F8EC;   
+            p{
+                color: $greenColor;
+            } 
+        }
+        &-store{
+            background-color: $grayBlur;
+            p{
+                color: $primaryColor;
+            }
+        }
+    }
+    &__name{
+        font-size: 12px;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,16 @@
+@import '../../assets/css/variable';
+
+.position {
+    padding: 16px 0;
+    font-size: 12px;
+    &-back{
+        color: $blurColor;
+    }
+    &-now{
+        color: $primaryColor;
+    }
+    &-slash{
+        color: $blurColor;
+        padding: 0 5px;
+    }
+}

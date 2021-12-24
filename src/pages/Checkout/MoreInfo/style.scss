@@ -1,0 +1,19 @@
+@import '../../../assets/css/variable';
+
+
+.form{
+    &__title{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    &__text{
+        width: calc(100% - 42px) ;
+        height: 112px;
+        border-radius: $radius;
+        background-color: $grayBlur;
+        border: 1px solid $productColor;
+        outline: none;
+        padding: 11px 21px;
+        font-size: 14px;
+    }
+}

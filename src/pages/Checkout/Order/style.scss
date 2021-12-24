@@ -1,0 +1,112 @@
+@import '../../../assets/css/variable';
+
+
+
+
+.order{
+    padding: 16px 32px;
+    border-radius: $radius;
+    border: 1px solid $productColor;
+    &__img{
+       
+        height: 70px;
+        img{
+            border-radius: $radius;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__operation{
+        outline: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__control{
+        margin-top: 12px;
+        display: flex;
+        justify-items: center;
+        gap:8px;
+        flex-direction: column;
+    }
+    &__name{
+        color: $blurColor;
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 0 16px;
+        
+    }
+    &__item:not(:first-child){
+        margin-top: 32px;
+    }
+    &__title{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+    }
+    &__field{
+       min-width: 75px;
+       color: $blurColor;
+    }
+   
+    &__star{
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+    &__price{
+        font-weight: 600;
+        line-height: 1.5;
+        & .sell__price{
+            color: $greenColor;
+            font-size: 18px;
+       } 
+       & .real__price{
+           text-decoration: line-through;
+           color: $blurColor;
+       }
+    }
+    &__bill{
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px 0;
+    }
+    &__cost{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    &__total{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        color: $greenColor;
+        & .title{
+            font-weight: 600;
+            color: $primaryColor;
+        }
+        & .total{
+            font-size: 26px;
+        }
+    }
+    &__voucher{
+        margin-bottom: 40px;
+    }
+    span{
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
