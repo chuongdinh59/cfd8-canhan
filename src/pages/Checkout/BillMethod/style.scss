@@ -1,6 +1,7 @@
 @import '../../../assets/css/variable';
 
 .form{
+    
     &:not(:first-child) {
         margin-top: $spaceBlock;
     }
@@ -8,5 +9,10 @@
         & .method:not(:first-child){
             margin-top: 16px;
         }
+    }
+    .error-text{
+        height: 10px;
+        color: red;
+        font-size: 12px;
     }
 }

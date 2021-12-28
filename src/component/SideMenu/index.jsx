@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
-import { Arrow, ArrowRight } from '../Icon';
-import './style.scss'
+import { Arrow } from '../Icon';
+import './style.scss';
 function SideMenu({name, btn , titles}) {
     return (
                 <div className="list list__title">

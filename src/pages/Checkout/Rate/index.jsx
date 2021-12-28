@@ -19,8 +19,8 @@ function Rate({ index }) {
     return (
         <>
             {
-                origin.map(color => {
-                    return color ? <Star color={color} fill = {color}/> : <Star />
+                origin.map( (color, index)  => {
+                    return color ? <Star key={index} color={color} fill = {color}/> : <Star key={index}/>
                 }) 
             }
         </>

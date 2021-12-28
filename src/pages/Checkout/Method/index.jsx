@@ -1,18 +1,18 @@
 import React from 'react';
 import './style.scss'
-import '../../../assets/img/g6.png'
-function Method({name , price, logo}) {
+function Method({name , price, logo, group, register}) {
+    // console.log(register);
     return (
-        <label className="method">
+        <label className="method" >
             <div className="method__branch">
-                <input type="radio" name='method' />
+                <input type="radio" name={group} {...register}/>
                 <p className="method__name">{name}</p>
             </div>
             {
                 price && 
                 <div className="method__price">
                     <p className="method__number">
-                        {price}
+                    {price}
                     </p>
                     <p className="method__desc">
                     Additional price

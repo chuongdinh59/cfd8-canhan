@@ -1,0 +1,22 @@
+
+
+.form{
+    &__item:not(:first-child){
+        margin-top: 16px;
+    }
+    &__item {
+        & .method__details.content{
+            max-height: 0px;
+            overflow: hidden;
+            transition: .5s;
+        }
+        & .method__details.show-content{
+            height: auto;
+            // max-height: 300px;
+            // overflow: visible;
+            // transition: 1s;
+
+        }
+    }
+    
+}

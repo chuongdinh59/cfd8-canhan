@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '../../../component/Button/Button';
-import { Arrow, ArrowRight } from '../../../component/Icon';
+import { Arrow } from '../../../component/Icon';
 import Post from './Post';
-import './style.scss'
+import './style.scss';
 function Blog(props) {
     return (
         <section className='blog'>

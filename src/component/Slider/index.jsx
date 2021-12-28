@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '../Button/Button';
-import { Arrow, ArrowRight } from '../Icon';
+import { Arrow } from '../Icon';
 import Quote from '../Quote';
-import './style.scss'
+import './style.scss';
 
 
 export default function Slider(props) {

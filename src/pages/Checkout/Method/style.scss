@@ -23,8 +23,7 @@
     }
     
     &__branch{
-        min-width: 5%;
-        flex: 1;
+        max-width: 35%;
     }
     &__number{
         color: $greenColor;

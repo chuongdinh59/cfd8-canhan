@@ -1,9 +1,19 @@
-import React from 'react';
-import BillHeading from '../BillHeading'
+import React, { useState } from 'react';
+import Input from '../../../component/Input';
+import BillHeading from '../BillHeading';
 import OrderItem from './OrderItem';
-import Input from '../../../component/Input'
-import './style.scss'
-function Order(props) {
+import './style.scss';
+function Order({ register, error }) {
+    const [notify, setNotify] = useState('')
+    const isEmty = (e) => {
+        const value = e.currentTarget.parentNode.querySelector('input').value
+        if (value.trim() === '') {
+            console.log(1);
+            setNotify('Chưa nhập Voucher')
+        }
+        else setNotify('')
+        
+    }
     return (
         <div className='order'>
             <BillHeading title='Order Summary' desc='Price can change depending on shipping method and taxes of your state.' />
@@ -29,9 +39,12 @@ function Order(props) {
             </div>
 
             <div className="order__voucher">
-                <Input name='' placeholder='Apply promo code'/>
+                {
+                    <Input name='' placeholder='Apply promo code' register={register('voucher', {required:false} )} /> 
+                }
+                <button className='apply-voucher' onClick={isEmty} >Apply Now</button>
             </div>
-
+            <p className="text-error">{ notify }</p>
             <div className="order__total">
                 <div className="order__date">
                     <span className='title'>Total Order</span>

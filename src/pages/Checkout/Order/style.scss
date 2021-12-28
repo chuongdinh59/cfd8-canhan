@@ -93,6 +93,7 @@
         justify-content: space-between;
         font-size: 12px;
         color: $greenColor;
+        margin-top: 40px;
         & .title{
             font-weight: 600;
             color: $primaryColor;
@@ -102,7 +103,19 @@
         }
     }
     &__voucher{
-        margin-bottom: 40px;
+        position: relative;
+        & .apply-voucher{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            font-weight: 600;
+            right: 4%;
+            cursor: pointer;
+        }
     }
     span{
         display: block;

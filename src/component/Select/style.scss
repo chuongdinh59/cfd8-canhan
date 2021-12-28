@@ -1,0 +1,31 @@
+@import '../../assets/css/variable';
+
+
+.select{
+    &__label{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    &__main{
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+        border-radius: $radius;
+        border: 1px solid $productColor;
+        background-color: $grayBlur;
+        overflow: hidden;
+    }
+    &__options{
+        padding: 0 18px;
+    }
+    select{
+        background-color: transparent;
+        height: 42px;
+        width: 100%;
+        outline: none;
+        border: none;
+    }
+    option{
+        width: 100%;
+    }
+}

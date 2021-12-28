@@ -3,11 +3,14 @@
 
 .footer{
     padding: 64px 0;
-    p{
-        color: $greenColor;
-        font-weight: 400;
-        margin-top: 16px;
-    }
+
+    & &__col{
+        p{
+            color: $greenColor;
+            font-weight: 400;
+            margin-top: 16px;
+        }  
+    } 
     &__main{
         display: flex;
         justify-content: space-between;
