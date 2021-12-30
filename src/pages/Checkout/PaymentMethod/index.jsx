@@ -2,7 +2,8 @@ import BillHeading from '../BillHeading';
 import './style.scss'
 import Method from '../Method';
 import PrivateMethod from './PrivateMethod';
-import { useState } from 'react';
+import { forwardRef, useImperativeHandle, useState } from 'react';
+import { useForm } from '../../../hooks/useForm';
 const data = [
     {
         group: 'payment__method',
@@ -23,8 +24,16 @@ const data = [
         logo: './img/bitcoin.png'
     },
 ]
-function PaymentMethod({ register, error, form }) {
+const PaymentMethod = forwardRef(( props,ref ) => {
     const [isOpen, setOpen] = useState(null)
+    const { register, form, error, validate } = useForm()
+
+    useImperativeHandle(ref, () => {
+        return {
+            validate,
+            form
+        }
+    }, [validate, form])
     const handleDrop = (index) => {
         const keys = ['cardnumber', 'carddate', 'cardholder', 'CVC']
         form && error && keys.forEach(key => {
@@ -36,7 +45,7 @@ function PaymentMethod({ register, error, form }) {
     return (
         <div className='payment__method form'>
             <BillHeading title='Payment method' step={3} desc={'Please enter your payment method'} />
-            <div className="form__method">
+            <form className="form__method">
                 {
                     data.map((item, index) => {
                         return (
@@ -54,11 +63,11 @@ function PaymentMethod({ register, error, form }) {
                     })
                }
 
-            </div>
+            </form>
             <p className="error-text">{error && error['paymethod']}</p>
         </div>
     );
-}
+})
 
 export default PaymentMethod;
 

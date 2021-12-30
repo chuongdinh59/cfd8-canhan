@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import Input from '../../../component/Input';
+import { useForm } from '../../../hooks/useForm';
 import BillHeading from '../BillHeading';
 import OrderItem from './OrderItem';
 import './style.scss';
-function Order({ register, error }) {
+const Order = forwardRef((props, ref) => {
+    const { register, form, validate } = useForm()
+
+    useImperativeHandle(ref, () => {
+        return {
+            validate,
+            form
+        }
+    }, [validate, form])
     const [notify, setNotify] = useState('')
     const isEmty = (e) => {
         const value = e.currentTarget.parentNode.querySelector('input').value
@@ -12,7 +21,7 @@ function Order({ register, error }) {
             setNotify('Chưa nhập Voucher')
         }
         else setNotify('')
-        
+
     }
     return (
         <div className='order'>
@@ -54,6 +63,6 @@ function Order({ register, error }) {
             </div>
         </div>
     );
-}
+})
 
 export default Order;

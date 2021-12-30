@@ -8,12 +8,11 @@
        grid-template-columns: 2.2fr 1.6fr; 
        gap: 0 32px;
     }
-    & .button{
-        margin: 32px 0;
-    }
+   
     & .form__policy{
         max-width: 212px;
         line-height: 1;
+        margin: 35px 0;
         & .commit{
             font-weight: 700;
             padding: 10px 0;

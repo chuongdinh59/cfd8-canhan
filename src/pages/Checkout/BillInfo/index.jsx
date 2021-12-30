@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import Input from '../../../component/Input';
 import Select from '../../../component/Select';
+import { useForm } from '../../../hooks/useForm';
 import BillHeading from '../BillHeading';
 import './style.scss';
-function BillInfo({ register, error }) {
-    
+const BillInfo = forwardRef((props, ref) => {
+    const { register, form, error, validate } = useForm()
+
+    useImperativeHandle(ref, () => {
+        return {
+            validate,
+            form
+        }
+    }, [validate, form])
+
     return (
         <div className='bill__info form'>
             <BillHeading desc = 'Please enter your billing info' step={1}/>
-            <div className="form__inputs">
+            <form className="form__inputs">
                 <Input label='First name' placeholder='First name' register={{ ...register('firstname', { required: true }, {required: 'First name là bắt buộc'}) }} error={error}/>
                 <Input label='Last name' placeholder='Last name'register={{...register('lastname', {required: true},{required: 'Last name là bắt buộc'})}} error={error}/>
                 <Input label='Email address' placeholder='Email address'register={{...register('email', {required: true , pattern: 'email'},{required: 'Email là bắt buộc', pattern: 'Email không hợp lệ'})}} error={error}/>
@@ -19,9 +28,9 @@ function BillInfo({ register, error }) {
                 <Select label='State / Country' register={{...register('state', {required: true},{})}} error={error}/>
                 <Input label='ZIP/Postal code' placeholder='ZIP/Postal code' register={{ ...register('zip', { required: true }, {required: 'Zip chỉ là bắt buộc'}) }} error={error} />
                 <Input label='' placeholder='Ship to a different address?' checkbox={true} register={{ ...register('ship', { required: false }, {}) }} error={error}/>
-            </div>
+            </form>
         </div>
     );
-}
+})
 
 export default BillInfo;

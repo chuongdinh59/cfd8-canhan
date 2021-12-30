@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '../../component/Button/Button';
-import { useForm } from '../../hooks/useForm';
 import BillInfo from './BillInfo';
-import BillMetod from './BillMethod';
+import BillMethod from './BillMethod';
 import Confrimation from './Confirm';
 import MoreInfo from './MoreInfo';
 import Order from './Order';
@@ -10,33 +9,58 @@ import PaymentMethod from './PaymentMethod';
 import './style.scss';
 
 function Checkout(props) {
-    const {handleSubmit, register, error, form} = useForm()
-    const submit = (form) => {
-       console.log(form);
+    const billInfoRef = useRef()
+    const billMethodRef = useRef()
+    const paymentMethodRef = useRef()
+    const moreInfoRef = useRef()
+    const confirmRef = useRef()
+    const orderRef = useRef()
+    
+    const submit = () => {
+        const errorObject = {
+            ...billInfoRef.current?.validate(),
+            ...billMethodRef.current?.validate(),
+            ...paymentMethodRef.current?.validate(),
+            ...moreInfoRef.current?.validate(),
+            ...confirmRef.current?.validate(),
+            ...orderRef.current?.validate(),
+            
+        }
+        if (Object.keys(errorObject).length === 0) {
+            const formData = {
+                ...billInfoRef.current?.form,
+                ...billMethodRef.current?.form,
+                ...paymentMethodRef.current?.form,
+                ...moreInfoRef.current?.form,
+                ...confirmRef.current?.form,
+                ...orderRef.current?.form,
+            }
+            console.log(formData)
+        }
+        
     }
     return (
         <>
-            
         <div className="checkout">
             <div className="container checkout-container">
-                    <form onSubmit={handleSubmit(submit)}>
-                        <BillInfo register={register} error={error}/>
-                        <BillMetod register={register} error={error}/>
-                        <PaymentMethod register={register} error={error} form={form}/>
-                        <MoreInfo />
-                        <Confrimation register={register} error={error} />
-                        <Button content='Complete order' size='large' bgcolor='bright' color='white' />
+                    <div  >
+                        <BillInfo  ref={billInfoRef}/>
+                        <BillMethod  ref={billMethodRef}/>
+                        <PaymentMethod  ref={paymentMethodRef}/>
+                        <MoreInfo ref={moreInfoRef}/>
+                        <Confrimation ref={confirmRef} />  
                         <div className="form__policy">
                             <img src="img/safe.png" alt="safe" />
                             <h3 className="commit">All your data are safe</h3>
                             <p className="policy">
                                 We are using the most advanced security to provide you the best experience ever.
                             </p>
-
                         </div>
-                    </form>
+                        <Button submit={submit}  content='Complete order' size='large' bgcolor='bright' color='white' />
+                    </div>
+
                     <aside>
-                        <Order register={register} error={error} />
+                        <Order ref={orderRef} />
                     </aside>
             </div>
             </div>

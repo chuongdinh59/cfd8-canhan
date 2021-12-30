@@ -1,9 +1,9 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CheckoutLayout from "./layout/CheckoutLayout";
 import MainLayout from "./layout/MainLayout";
-import HomePage from "./pages/Homepage/";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CategoryPage from "./pages/Category";
 import Checkout from "./pages/Checkout";
-import CheckoutLayout from "./layout/CheckoutLayout";
+import HomePage from "./pages/Homepage/";
 function App() {
   
   return (
@@ -18,9 +18,9 @@ function App() {
 
         </Route>
 
-        
       </Routes>
     </BrowserRouter>
+
   );
 }
 export default App;

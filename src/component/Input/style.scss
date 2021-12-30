@@ -15,7 +15,6 @@
         border: 1px solid $productColor;
         background-color: $grayBlur;
         overflow: hidden;
-        padding: 0 18px;
     }
     &__range{
         display: flex;
@@ -30,12 +29,13 @@
     input[type = checkbox]{
         width: 24px;
         height: 24px;
-
+        margin-left: 18px;
     }
     input[type = text]{
         height: 42px;
         border: none;
         outline: none;
+        padding: 0 18px;
     }
     input:disabled::placeholder{
         color: #000;
