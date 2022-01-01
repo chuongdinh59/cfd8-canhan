@@ -1,0 +1,75 @@
+
+
+
+.button{
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: 700;
+    line-height: 100%;
+    cursor: pointer;
+    &.size{
+        &-small{
+            height: 32px;
+            line-height: 44px;
+            padding: 0 8px;
+           
+        }
+        &-medium{
+            height:44px;
+            line-height: 44px;
+            padding: 0 16px;
+        }
+        &-large{
+            height: 54px;
+            line-height:54px;
+            padding: 0 46px;
+
+        }
+    }
+    &.type{
+        &-icon-left{
+            span{
+                margin-right: 12px;
+            }
+        }
+        &-icon-right{
+            span{
+                margin-left: 11px;
+            }
+        }
+    }
+    &.bgcolor{
+        &-default{
+            background-color: transparent;
+            border: 2px solid #92C064;
+            
+        }
+        &-bright{
+            background-color:  #6A983C;
+            border: 2px solid #46760A;
+
+        }
+        &-store{
+            background-color: #F5F5F5;
+            
+        }
+    }
+    &.color{
+        &-default{
+            color: #000;
+        }
+        &-white{
+            color: #fff;
+        }
+    }
+}
+button:disabled{
+    background: #ccc !important;
+    cursor: not-allowed;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
