@@ -29,7 +29,7 @@ export const destroy = (index) => {
         payload: {index}
     }
 }
-export const filter = (type) => {
+export const filterSwitch = (type) => {
     return {
         type: 'SWITCH',
         payload: {type}
