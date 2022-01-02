@@ -42,6 +42,7 @@
         }
         &-store{
             background-color: $grayBlur;
+            border: 1px solid $productColor;
             p{
                 color: $primaryColor;
             }

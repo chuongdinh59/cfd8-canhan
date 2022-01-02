@@ -6,7 +6,6 @@ import OrderItem from './OrderItem';
 import './style.scss';
 const Order = forwardRef((props, ref) => {
     const { register, form, validate } = useForm()
-
     useImperativeHandle(ref, () => {
         return {
             validate,
@@ -17,12 +16,12 @@ const Order = forwardRef((props, ref) => {
     const isEmty = (e) => {
         const value = e.currentTarget.parentNode.querySelector('input').value
         if (value.trim() === '') {
-            console.log(1);
             setNotify('Chưa nhập Voucher')
         }
         else setNotify('')
-
     }
+
+    
     return (
         <div className='order'>
             <BillHeading title='Order Summary' desc='Price can change depending on shipping method and taxes of your state.' />

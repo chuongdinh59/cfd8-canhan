@@ -15,12 +15,12 @@ function App() {
         </Route>
         <Route path='/checkout' element={<CheckoutLayout />} >
             <Route index element={<Checkout />} />
-
         </Route>
-
       </Routes>
     </BrowserRouter>
 
   );
 }
 export default App;
+
+

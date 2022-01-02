@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from '../../../component/Icon';
+import { Star } from '../Icon';
 
 function Rate({ index }) {
     
@@ -18,11 +18,13 @@ function Rate({ index }) {
 
     return (
         <>
+            <div className='stars'>
             {
                 origin.map( (color, index)  => {
                     return color ? <Star key={index} color={color} fill = {color}/> : <Star key={index}/>
                 }) 
             }
+            </div>
         </>
     );
 }

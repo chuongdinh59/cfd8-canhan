@@ -1,0 +1,17 @@
+@import '../../assets/css/variable';
+
+
+.paginate{
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    & .page-number.active{
+        color: $greenColor;
+    }
+    & .page{
+        color: $blurColor;
+    }
+    span{
+        font-size: 12px;
+    }
+}

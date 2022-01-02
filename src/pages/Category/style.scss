@@ -2,8 +2,63 @@
 
 
 .category{
+    
     &__container{
         display: grid;
         grid-template-columns: 1fr 3fr;
+        gap: 0 32px;
+        padding: 60px 0;
     }
+    & .product__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px 32px;
+        &:not(:first-child){
+            margin-top: 48px;
+        }
+    }
+    &__title{
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__express{
+        display: flex;
+        align-items: center;
+        gap: 0 25px;
+        & .express__option{
+            display: flex;
+            align-items: center;
+            gap: 0 5px;
+        }
+        span{
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+    & .quantily{
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+    }
+    &__screen{
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+        padding: 16px 0px;
+    }
+    &__tags{
+        display: flex;
+        align-items: center;   
+        gap: 0 12px;
+        span{
+            font-size: 12px;
+            color: $blurColor;
+        }
+    }
+    
+    
 }

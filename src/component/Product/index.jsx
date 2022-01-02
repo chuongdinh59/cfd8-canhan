@@ -2,9 +2,9 @@ import React from 'react';
 import Button from '../Button/Button';
 import Tag from '../Tag';
 import './style.scss'
-function ProductItem({description, number}) {
+function ProductItem({description }) {
     return (
-        <div className={`product flex-${number}`} >
+        <div className={`product`} >
             <Tag  tagname={"-32%"} bg='bright'/>
             <div className="product__img">
                 <img src="https://genk.mediacdn.vn/139269124445442048/2021/3/9/photo-1-16152785247611799272501.png" alt="" />

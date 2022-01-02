@@ -1,6 +1,6 @@
 import React from 'react';
 import { Compare, Heart, Times } from '../../../../component/Icon';
-import Rate from '../../Rate';
+import Rate from '../../../../component/Rate';
 function OrderItem() {
     return (
         <div className='order__item'>

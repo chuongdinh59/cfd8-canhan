@@ -1,0 +1,51 @@
+@import '../../../assets/css/variable';
+
+.screen{
+    display: inline-block;
+    padding: 11px 18px;
+    background-color: $grayBlur;
+    border: 1px solid $productColor;
+    border-radius: $radius;
+    
+    &__main, &__content, &__filter{
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+    }
+    &__content{
+        gap: 0 8px;
+    }
+    &__filter{
+        position: relative;
+        &::after{
+            position: relative;
+            content: '';
+            width: 1px;
+            height: 20px;
+            background-color: $productColor;
+            right: 0;
+            margin: 0 20px;
+        }
+    }
+    &__select{
+        select{
+            outline: none;
+            border: none;
+            background-color:transparent;
+            font-weight: 600;
+        }
+    }
+    input[type=checkbox],  input[type = radio]{
+        width: 20px;
+        height: 20px;
+        margin: 0
+    }
+    span{
+        font-size: 14px;
+    }
+}

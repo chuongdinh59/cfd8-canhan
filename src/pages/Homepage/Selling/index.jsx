@@ -11,9 +11,9 @@ function Selling({name, btn, titles}) {
             <div className="container sell__details">
                 <SideMenu name={name} btn={btn} titles={titles} />
                 <div className="sell__list">
-                    <ProductItem description="Space for a small product description" number={3} />
+                    <ProductItem description="Space for a small product description"  />
                     <ProductItem description = "Space for a small product description Space for a small product descriptio"number={3}/>
-                    <ProductItem description="Space for a small product description"number={3}/>
+                    <ProductItem description="Space for a small product description"/>
                 </div>
             </div>
         </section>
