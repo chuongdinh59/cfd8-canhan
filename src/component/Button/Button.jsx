@@ -1,12 +1,15 @@
 import React from 'react';
 import './style.scss'
 import classNames from 'classnames'
-function Button({ content, color = "default" , bgcolor = "default" , size = "medium", type = "default", round = false , icon = null, submit = null}) {
+import { Loader } from '../Icon';
+function Button({ content, loading , color = "default" , bgcolor = "default" , size = "medium", type = "default", round = false , icon = null }) {
     return (
-        <button onClick={submit}  className={classNames("button", `color-${color}`, `bgcolor-${bgcolor} `,  `size-${size}`, `type-${type}`, { round })} >
-            {type === 'icon-left' && icon }
+        <button disabled={loading} className={classNames("button", `color-${color}`, `bgcolor-${bgcolor} `,  `size-${size}`, `type-${type}`, { round })} >
+            {loading && <Loader />}
+            
+            {type === 'icon-left' && !loading && <span>{icon}</span>}
             {content}
-            {type === 'icon-right' && icon}
+            {type === 'icon-right' && <span>{icon}</span>}
         </button>
     );
 }

@@ -51,9 +51,9 @@ function Footer(props) {
                     </h5>
                     <div className="tag__list">
                         {
-                            tagList.map(item => {
+                            tagList.map((item , index) => {
                                 return (
-                                    <Tag tagname={item} bg='store' />
+                                    <Tag key={index} tagname={item} bg='store' />
                                 )
                             })
                         }

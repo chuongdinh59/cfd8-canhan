@@ -2,6 +2,7 @@ import React from 'react';
 import { Arrow, Letter } from '../Icon';
 import './style.scss'
 function Input({label = '', placeholder = 'Placehoder', type = 'text' , position, checkbox = false ,error ,letter = false, arrow = false, register}) {
+    
     return (
         <label className='input'>
             <h5 className="input__label">

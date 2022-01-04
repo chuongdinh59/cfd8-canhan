@@ -1,4 +1,5 @@
-export function User({color = "#000"}) {
+import './style.scss'
+export function User({ color = "#000" }) {
     return (
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5 36.6667L6.31667 31.8667C10.6667 16.0334 29.3333 16.0334 33.6833 31.8667L35 36.6667" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -106,5 +107,11 @@ export const Section = () => {
         <path d="M1.33398 11.3333H14.6673" stroke="#A9A9A9" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 
+    )
+}
+
+export const Loader = () => {
+    return (
+            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
     )
 }

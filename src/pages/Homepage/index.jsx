@@ -11,7 +11,8 @@ function HomePage(props) {
       ]
       const titles2 = [
         "Carrots", "Tomatoes", "Potatoes", "Chicken", "Pork"
-      ]
+  ]
+ 
     return (
         <>
             <Categories />
@@ -19,7 +20,7 @@ function HomePage(props) {
             <Selling name="Best from Farmers" btn="More products" titles={titles2} />
             <Slider />
             <HeadLine />
-            <Blog />
+           <Blog />
         </>
     );
 }
