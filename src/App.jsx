@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Test from './component/Test';
 import CheckoutLayout from "./layout/CheckoutLayout";
 import MainLayout from "./layout/MainLayout";
 import Login from './pages/Auth/Login';
@@ -23,9 +24,11 @@ function App() {
         </Route>
         <Route path='/login' element={<Login />} />
       <Route  path = '/register' element = {<Register />} />
-          
+      <Route  path = '/test' element = {<Test />} />
+    
       </Routes>
     </BrowserRouter>
+
     </Provider>
   );
 }

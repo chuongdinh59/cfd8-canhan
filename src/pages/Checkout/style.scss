@@ -5,9 +5,9 @@
 .checkout{
     &-container{
        display: grid;
-       grid-template-columns: 2.2fr 1.6fr; 
+       grid-template-columns: 2.2fr 1.6fr;
        gap: 0 32px;
-    }
+}
    
     & .form__policy{
         max-width: 212px;

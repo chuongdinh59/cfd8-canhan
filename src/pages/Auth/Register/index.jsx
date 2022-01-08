@@ -20,6 +20,9 @@ function Register(props) {
         console.log(status);
         if (status?.error) {
             alert(status.error)
+            form.username = ''
+            form.password = ''
+            form.name = ''
             setIsFetching(false)
             return 
         }
@@ -45,7 +48,7 @@ function Register(props) {
                     <form action="" className='login__form' onSubmit={handleRegister}>
                         <Input placeholder='Username' register= {register('username', {required: true, pattern: 'email'}, {require: 'chưa nhập username', pattern: 'username không hợp lệ'})} error={error}/>
                         <Input placeholder='Password' register={register('password', { required: true }, { require: 'chưa nhập password' })} error={error}/>
-                        <Input placeholder='Fullname' register={register('fullname', { required: true }, { require: 'chưa nhập tên' })} error={error}/>
+                        <Input placeholder='Fullname' register={register('name', { required: true }, { require: 'chưa nhập tên' })} error={error}/>
                     <Button  loading={isFetching} content={'Sign Up'} bgcolor='bright' color='white' size='medium'/>    
                     </form>
                 </div>

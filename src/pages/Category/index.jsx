@@ -1,7 +1,7 @@
 import React from 'react';
+import { Breadcrumbs, BreadcrumbsItem } from '../../component/Breadcrumbs';
 import { Gird, Section } from '../../component/Icon';
 import More from '../../component/More';
-import Position from '../../component/Position';
 import Tag from '../../component/Tag';
 import Filter from './Filter';
 import ProductList from './ProductList';
@@ -12,7 +12,10 @@ function CategoryPage(props) {
         <>
         <div className="category">
                 <div className="container">
-                        <Position />
+                <Breadcrumbs>
+                            <BreadcrumbsItem>Homepage</BreadcrumbsItem>
+                            <BreadcrumbsItem>Fruit and vegetables</BreadcrumbsItem>
+                </Breadcrumbs>
                     <div className="category__header">
                         <div className="category__title">
                             <h3>Fruit and vegetables</h3>
@@ -52,8 +55,7 @@ function CategoryPage(props) {
                         </section>
                         <section className="products">
                             <ProductList />
-                            <ProductList />
-                            <ProductList />
+                            
                         </section>
                     </div>
                     <More />

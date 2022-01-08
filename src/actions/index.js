@@ -1,6 +1,6 @@
-export const loginAction = (form) => {
+export const loginAction = (data) => {
     return {
         type: 'LOGIN',
-        payload: form
+        payload: data
     }
 }

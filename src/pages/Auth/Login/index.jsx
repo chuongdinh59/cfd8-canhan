@@ -5,8 +5,6 @@ import { loginAction } from '../../../actions';
 import Button from '../../../component/Button/Button';
 import Input from '../../../component/Input';
 import { useForm } from '../../../hooks/useForm';
-import authService from '../../../service/authService';
-import userService from '../../../service/userService';
 import './style.scss';
 function Login(props) {
     const [fetch, setFetch] = useState(false)
@@ -15,29 +13,27 @@ function Login(props) {
     const { login } = useSelector(store => store.auth)
     const navigate = useNavigate()
     
-
+    
     const handleLogin = async (e) => {
         e.preventDefault()
         setFetch(true)
-        
         const errorObject = validate()
         if (Object.keys(errorObject).length === 0) {
-            const token = await authService.login(form)
-            if (token?.message) {
-                return  alert(token.message) 
-            }
-            localStorage.setItem('token', JSON.stringify(token.data))
-            const user = await userService.getInfo()
-            dispatch(loginAction(user.data))
+            // const token = await authService.login(form)
+            // if (token?.message) {
+            //     alert(token.message) 
+            //     setFetch(false)
+            //     return
+            // }
+            // localStorage.setItem('token', JSON.stringify(token.data))
+            // const user = await userService.getInfo()
+            dispatch(loginAction(form))
         }
         setFetch(false)
-
     }
-
     if (login) {
         navigate('/')
     }
-    
     return (
         <div className='login'>
             <div className="login__wrapper">
@@ -50,6 +46,6 @@ function Login(props) {
             </div>
         </div>
     );
-}
+}   
 
 export default Login;

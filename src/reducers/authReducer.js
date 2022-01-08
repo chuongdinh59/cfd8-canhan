@@ -8,10 +8,11 @@ const initialState = {
     user: null
 }
 
- const authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOGIN':
+        case 'SET_PROFILE':
             return {
+                ...state,
                 login: !!action.payload,
                 user: action.payload
             }
@@ -22,3 +23,5 @@ const initialState = {
     }
 }
 export default  authReducer 
+
+

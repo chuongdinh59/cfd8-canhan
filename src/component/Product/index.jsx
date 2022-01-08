@@ -2,25 +2,26 @@ import React from 'react';
 import Button from '../Button/Button';
 import Tag from '../Tag';
 import './style.scss'
-function ProductItem({description }) {
+function ProductItem({ description, name, src, realPrice, sellPrice, discountRate }) {
+    
     return (
         <div className={`product`} >
-            <Tag  tagname={"-32%"} bg='bright'/>
+            <Tag  tagname={`-${discountRate}%`} bg='bright'/>
             <div className="product__img">
-                <img src="https://genk.mediacdn.vn/139269124445442048/2021/3/9/photo-1-16152785247611799272501.png" alt="" />
+                <img src={src} alt="" />
             </div>
             <div className="product__info">
                 <div className="product__name">
-                <h5 className="product__title">Product Tille</h5>
+                    <h5 className="product__title">{name}</h5>
                 <p className="product__desc">{description} </p>
                 </div>
                 <div className="product__price">
                     <div className="price__number">
                         <p className="price__number--real">
-                            1.48 USD
+                            {realPrice} VND
                         </p>
                         <p className="price__number--sell">
-                            48.56
+                            {sellPrice} VND
                         </p>
                     </div>
                     

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Breadcrumbs, BreadcrumbsItem } from '../../component/Breadcrumbs';
 import Button from '../../component/Button/Button';
 import BillInfo from './BillInfo';
 import BillMethod from './BillMethod';
@@ -41,9 +42,17 @@ function Checkout(props) {
     }
     return (
         <>
-        <div className="checkout">
-            <div className="container checkout-container">
-                    <div  >
+            <div className="checkout">
+                <div className="container checkout-header-second">
+                <Breadcrumbs>
+                            <BreadcrumbsItem>Homepage</BreadcrumbsItem>
+                            <BreadcrumbsItem>Checkout page</BreadcrumbsItem>
+                </Breadcrumbs>
+                </div>
+                <div className="container checkout-container">
+                    
+                    <div>
+                       
                         <BillInfo  ref={billInfoRef}/>
                         <BillMethod  ref={billMethodRef}/>
                         <PaymentMethod  ref={paymentMethodRef}/>
@@ -58,13 +67,11 @@ function Checkout(props) {
                         </div>
                         <Button submit={submit}  content='Complete order' size='large' bgcolor='bright' color='white' />
                     </div>
-
                     <aside>
                         <Order ref={orderRef} />
                     </aside>
             </div>
-            </div>
-            
+        </div>
             <footer className="footer">
                 <div className="container">
                     <p >Copyright © 2020 Freshnesecom</p>

@@ -1,0 +1,19 @@
+@import '../../assets/css/variable';
+
+.breadcrumbs {
+    font-size: 12px;
+    padding: 16px 0;
+    & ul, li{
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+    }
+    & .item > .link{
+        color: $blurColor;
+        
+    }
+    & .now > .link{
+        color: $primaryColor;
+    }
+   
+}
