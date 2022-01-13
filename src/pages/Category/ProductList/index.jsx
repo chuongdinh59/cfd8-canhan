@@ -5,12 +5,11 @@ import ProductSkeletonList from '../../../component/ProductSkeletonList';
 import useQuery from '../../../hooks/useQuery'
 import pageService from '../../../service/pageService'
 function ProductList(props) {
-    const { page } = useSelector(store => store.page)
-    if (localStorage.setItem('page_number', JSON.stringify(page)) !== 1) {
-        localStorage.setItem('page_number', JSON.stringify(page))
-    } 
-    const { data, isFetching } = useQuery(() => pageService.getPage(page), [page])
-    console.log(isFetching);
+    const filter = useSelector(store => store.page)
+    
+    const { data, isFetching } = useQuery(() => pageService.getPage(filter), [] )
+
+   
     return (
         <>
          <div className='product__list'>
@@ -21,7 +20,8 @@ function ProductList(props) {
                         description={item.short_description} name={item.name}
                         key={item._id} src={item.images[0].thumbnail_url} 
                         realPrice={item.real_price} sellPrice={item.price} 
-                        discountRate={item.discount_rate}
+                        rate={item.rating_average} discountRate={item.discount_rate}
+                        id = {item._id}
                 />)
             }
             </div>

@@ -7,7 +7,7 @@ import './style.scss'
 function HeaderBar(props) {
     return (
         <div className="header__main">
-            <a href="#!" className="header__logo">
+            <a href=" " className="header__logo">
                 <img src= {logo} alt="logo shop" />
             </a>    
            <HeaderSearch />

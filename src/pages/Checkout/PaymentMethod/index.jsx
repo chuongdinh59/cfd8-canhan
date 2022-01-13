@@ -51,7 +51,7 @@ const PaymentMethod = forwardRef(( props,ref ) => {
                         return (
                             <div key={index} className="form__item" >
                                 <div onClick={() => handleDrop(index)} >
-                                    <Method group={item.group} name={item.name} logo={item.logo} register={{ ...register('paymethod', {required: true}, {required: 'Phương thức thanh toán bắt buộc'}), value:item.paymethod }}/>
+                                    <Method group={item.group} name={item.name} logo={item.logo} register={{ ...register('paymentMethod', {required: true}, {required: 'Phương thức thanh toán bắt buộc'}), value:item.paymethod }}/>
                                 </div>
                                 <div className={`method__details ${isOpen === index ? 'show-content' : 'content'}`} >
                                     {

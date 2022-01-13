@@ -43,14 +43,11 @@ export function Letter ({color = '#151515'}) {
         
     )
 }
-export function Heart({ color = '#E6704B' }) {
+export function Heart({ color = '#E6704B' , fill = 'none' }) {
     return (
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill={fill} xmlns="http://www.w3.org/2000/svg">
         <path fillRule="evenodd" clipRule="evenodd" d="M6.65559 2.44501C7.13297 1.96762 7.78045 1.69942 8.45559 1.69942C9.13072 1.69942 9.7782 1.96762 10.2556 2.44501C10.733 2.9224 11.0012 3.56988 11.0012 4.24501C11.0012 4.92014 10.733 5.56762 10.2556 6.04501L9.60059 6.70001L6.00059 10.3L2.40058 6.70001L1.74558 6.04501C1.26819 5.56762 1 4.92014 1 4.24501C1 3.56988 1.26819 2.9224 1.74558 2.44501C2.22297 1.96762 2.87045 1.69942 3.54558 1.69942C4.22072 1.69942 4.86819 1.96762 5.34558 2.44501L6.00059 3.10001L6.65559 2.44501Z" stroke={color} strokeLinecap="round" strokeLinejoin="bevel"/>
         </svg>
-        
-
-
     )
 }
 

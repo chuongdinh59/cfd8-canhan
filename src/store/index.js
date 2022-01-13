@@ -26,12 +26,12 @@ sagaMiddleware.run(rootSaga)
 
 
 const token = JSON.parse(localStorage.getItem('token'))
-const pageNumber = JSON.parse(localStorage.getItem('page_number'))
+// const pageNumber = JSON.parse(localStorage.getItem('page_number'))
 if (token) {
     store.dispatch({type: 'GET_PROFILE'})
 }
-if (pageNumber) {
-    store.dispatch({ type: 'UPDATE_PAGE', payload : pageNumber})
-}
+// if (pageNumber) {
+//     store.dispatch({ type: 'UPDATE_PAGE', payload : pageNumber})
+// }
 
 export default store

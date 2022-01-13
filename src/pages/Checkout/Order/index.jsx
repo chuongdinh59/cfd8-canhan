@@ -2,9 +2,11 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import Input from '../../../component/Input';
 import { useForm } from '../../../hooks/useForm';
 import BillHeading from '../BillHeading';
-import OrderItem from './OrderItem';
+import OrderItem from '../../../component/OrderItem';
 import './style.scss';
+import { useSelector } from 'react-redux';
 const Order = forwardRef((props, ref) => {
+    const { cart } = useSelector(store => store.cart)
     const { register, form, validate } = useForm()
     useImperativeHandle(ref, () => {
         return {
@@ -25,10 +27,26 @@ const Order = forwardRef((props, ref) => {
     return (
         <div className='order'>
             <BillHeading title='Order Summary' desc='Price can change depending on shipping method and taxes of your state.' />
-            <div className="order__list">
-                <OrderItem />
-                <OrderItem />
-            </div>
+            {
+                cart?.listItems.length > 0 ?
+                <div className="cart__orders">      
+                {
+                        cart?.listItems?.map(item => {
+                        return <OrderItem src={item.product.thumbnail_url}
+                            key={item.product._id}
+                            id={item.product._id} realPrice={item.product.real_price}
+                            sellPrice={item.product.price} quantity={item.quantity}
+                            name={item.product.name}
+                        />
+                    })
+                }
+                </div>
+                : <div className="cart__empty">
+                        <div className="emty__icon">
+                            <img src="https://rtworkspace.com/wp-content/plugins/rtworkspace-ecommerce-wp-plugin/assets/img/empty-cart.png" alt="" />
+                        </div>
+                </div>
+            }
             <div className="order__payment">
                 <div className="order__bill">
                     <div className="order__cost">

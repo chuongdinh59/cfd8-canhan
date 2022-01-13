@@ -12,24 +12,15 @@ function Login(props) {
     const dispatch = useDispatch()
     const { login } = useSelector(store => store.auth)
     const navigate = useNavigate()
-    
-    
     const handleLogin = async (e) => {
         e.preventDefault()
         setFetch(true)
         const errorObject = validate()
         if (Object.keys(errorObject).length === 0) {
-            // const token = await authService.login(form)
-            // if (token?.message) {
-            //     alert(token.message) 
-            //     setFetch(false)
-            //     return
-            // }
-            // localStorage.setItem('token', JSON.stringify(token.data))
-            // const user = await userService.getInfo()
             dispatch(loginAction(form))
         }
         setFetch(false)
+        return;
     }
     if (login) {
         navigate('/')

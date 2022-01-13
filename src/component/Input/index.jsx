@@ -1,7 +1,7 @@
 import React from 'react';
 import { Arrow, Letter } from '../Icon';
 import './style.scss'
-function Input({label = '', placeholder = 'Placehoder', type = 'text' , position, checkbox = false ,error ,letter = false, arrow = false, register}) {
+function Input({label = '', disable = false ,placeholder = 'Placehoder', type = 'text' , position, checkbox = false ,error ,letter = false, arrow = false, register}) {
     
     return (
         <label className='input'>
@@ -11,8 +11,8 @@ function Input({label = '', placeholder = 'Placehoder', type = 'text' , position
             <div className="input__main">
                 {letter && position === 'icon-left' && <span>{<Letter />}</span>}
                 {checkbox && <label className='input__checkbox'><input {...register} type="checkbox" /></label> }
-                {checkbox && <input type={type} placeholder={placeholder} disabled={checkbox} /> }
-                {!checkbox && <input type={type} placeholder={placeholder} disabled={checkbox} {...register}/>}
+                {checkbox && <input type={type} placeholder={placeholder} disabled={disable} /> }
+                {!checkbox && <input type={type} placeholder={placeholder} disabled={disable} {...register}/>}
                 {arrow &&
                     <div className="input__range">
                         <span>{<Arrow rotate='180deg'/>}</span>

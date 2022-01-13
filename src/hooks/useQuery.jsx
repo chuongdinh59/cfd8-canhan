@@ -1,9 +1,10 @@
+
 import { useEffect, useState } from "react"
 
-const useQuery = (promise, dependencyList = []) => {
-     
+export const useQuery = (promise, dependencyList = []) => {
+
     const [isFetching, setIsFetching] = useState(true)
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
     
     useEffect( () => {
         (async () => {
@@ -12,13 +13,14 @@ const useQuery = (promise, dependencyList = []) => {
             setData(res.data)
             setIsFetching(false)
         })()
-    }, dependencyList)
+
+
+    },dependencyList)
 
     return {
         data,
         isFetching
     }
 }
-
 
 export default useQuery

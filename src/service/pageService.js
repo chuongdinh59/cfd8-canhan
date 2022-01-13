@@ -1,10 +1,12 @@
 import { API } from "../constant/api"
+import { objectToUrlQuery } from "../utils/queryUrl"
 
 
 
 const pageService = {
-    getPage(index) {
-        return fetch(`${API}/product?page=${index}`).then(res => res.json())
+    getPage(filter) {
+        const key = objectToUrlQuery(filter)
+        return fetch(`${API}/product?${key}`).then(res => res.json())
     }
 }
 

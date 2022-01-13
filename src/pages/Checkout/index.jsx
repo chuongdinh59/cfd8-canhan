@@ -36,9 +36,16 @@ function Checkout(props) {
                 ...confirmRef.current?.form,
                 ...orderRef.current?.form,
             }
-            console.log(formData)
+            // const { shippingMethod, paymentMethod, name,
+            //     phone, email, address,
+            //     province, district, note
+            // } = formData;
+            // const formatData = {
+
+            // }
+            
+            
         }
-        
     }
     return (
         <>
@@ -65,7 +72,7 @@ function Checkout(props) {
                                 We are using the most advanced security to provide you the best experience ever.
                             </p>
                         </div>
-                        <Button submit={submit}  content='Complete order' size='large' bgcolor='bright' color='white' />
+                        <Button onClick={submit}  content='Complete order' size='large' bgcolor='bright' color='white' />
                     </div>
                     <aside>
                         <Order ref={orderRef} />

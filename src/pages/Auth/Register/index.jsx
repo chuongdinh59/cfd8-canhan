@@ -35,7 +35,7 @@ function Register(props) {
             navigate('/')
         }
         setIsFetching(false)
-
+        return;
 
     }
     if (login) {

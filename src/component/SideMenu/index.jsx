@@ -14,7 +14,7 @@ function SideMenu({name, btn , titles}) {
                         titles.map( (title, index) => {
                             return (
                                 <li key={index} className="list__item">
-                                <a href="#!" className="list__link">
+                                <a href=" " className="list__link">
                                 {title}
                                 </a>
                             </li>

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const emailRegexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const phoneRegexp = /(84|0[3|5|7|8|9])+([0-9]{8})\b/
-// const passwordRegexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
+const passwordRegexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
 export const useForm = (initialValue = {}) => {
     const [form, setForm] = useState(initialValue)
     const [error, setError] = useState({})
@@ -43,9 +43,9 @@ export const useForm = (initialValue = {}) => {
                 if (pattern === 'phone') {
                     pattern = phoneRegexp;
                 }
-                // if (pattern === 'password') {
-                //     pattern = passwordRegexp;
-                // }
+                if (pattern === 'password') {
+                    pattern = passwordRegexp;
+                }
                 if(!pattern.test(form[i])){
                     errorOBject[i] = m?.pattern || `${i} không đúng định dạng`
                 }

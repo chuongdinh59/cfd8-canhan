@@ -11,6 +11,12 @@ const cartService = {
             method: 'PUT',
             body: JSON.stringify({quantity: newQuantity})
         })
+    },
+    removeCart(id) {
+        console.log(id);
+        return callApiWithToken(`${API}/ecommerce/v1/cart/remove-item/${id}`, {
+            method: 'DELETE'
+        })
     }
 }
 

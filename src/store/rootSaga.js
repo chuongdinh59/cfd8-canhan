@@ -2,8 +2,6 @@ import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import authService from '../service/authService';
 import cartService from '../service/cartService';
 import userService from '../service/userService';
-
-
 function* fetchLogin(action) {
     try {
         const token = yield call(authService.login, action.payload)
@@ -13,7 +11,6 @@ function* fetchLogin(action) {
         
     }
 }
-
 function* getProfile(action) {
     try {
         const token = JSON.parse(localStorage.getItem('token'))
@@ -28,13 +25,11 @@ function* getProfile(action) {
 }
 
 function* getCart() {
-    console.log(1);
    try {
        const token = JSON.parse(localStorage.getItem('token'))
 
        if (token) {
            const cart = yield call(cartService.getCart)
-           console.log(cart);
            yield put({ type: 'SET_CART', payload: cart.data })
        }
 
@@ -43,31 +38,51 @@ function* getCart() {
    }
 }
 
+function* addProduct(action) {
+    try {
+        const token = JSON.parse(localStorage.getItem('token'))
+        if (!token) {
+            return;
+        }
+        yield call(cartService.updateQuantity, action.payload.id, 1)
+        yield put({type: "GET_CART"})
+    } catch (error) {
+    }
+}
 
-function* updateQuantity( action ) {
+function* updateQuantity(action) {
+    console.log(action);
     try {
         const { product_id, quantity } = action.payload
-        
-        console.log(product_id, quantity);
 
         yield call(cartService.updateQuantity, product_id, quantity)
 
-        console.log('DONE UPDATE...');
-        yield put({type: "GET_CART"})
+        console.log('next get cart');
+        yield put({ type: "GET_CART" }) 
+        
 
     } catch (error) {
         
     }
 }
-
+function* removeCart(action) {
+    try {
+        const { id } = action.payload
+        yield call(cartService.removeCart, id)
+        yield put({type: 'GET_CART'})
+    } catch (error) {
+        
+    }    
+}
 function* rootSaga() {
-
+    console.log('rootSaga');
     yield takeEvery('LOGIN', fetchLogin);
     yield takeLatest('GET_PROFILE', getProfile)
     yield takeLatest('GET_PROFILE', getCart) 
     yield takeLatest('GET_CART', getCart)
+    yield takeEvery('ADD_PRODUCT', addProduct)
+    yield takeEvery('REMOVE_CART', removeCart)
     yield takeEvery(['INCREMENT', 'DECREMENT'], updateQuantity) 
-
 }
 
 export default rootSaga;

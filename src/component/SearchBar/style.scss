@@ -74,6 +74,13 @@
             justify-content: center;
             align-items: center;
         }
-}
 
+    }
+    &__shopping{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+
+    }
 }

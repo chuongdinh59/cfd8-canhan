@@ -1,12 +1,12 @@
 import React from 'react';
-import classNames from 'classnames'
+import classnames from 'classnames'
 import './style.scss'
 import Tag from '../../../../component/Tag';
 function Post(
     { children , topic , author = "Author", time  = "17. 6. 2020", avatar = null, size }) {
     
     return (
-        <div className={classNames('post', `post-${size}`)}>
+        <div className={classnames('post', `post-${size}`)}>
             
 
             <div className="post__img">

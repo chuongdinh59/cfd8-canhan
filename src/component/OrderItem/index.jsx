@@ -1,12 +1,16 @@
 import React from 'react';
-import { Compare, Heart, Times } from '../../../../component/Icon';
-import Rate from '../../../../component/Rate';
-function OrderItem() {
+import { useDispatch } from 'react-redux';
+import { Compare, Heart, Times } from '../Icon';
+import Rate from  '../Rate'
+function OrderItem({ src, id, realPrice, sellPrice, rate, quantity, name }) {
+    
+
+    const dispatch = useDispatch()
     return (
         <div className='order__item'>
             <div className="order-represent">
                 <div className="order__img">
-                    <img src="https://genk.mediacdn.vn/139269124445442048/2021/3/9/photo-1-16152785247611799272501.png" alt="product" />
+                    <img src={src} alt="product" />
                 </div>
                 <div className="order__control">
                     <button className="order__operation">
@@ -25,19 +29,19 @@ function OrderItem() {
                         Compare
                         </p>
                     </button>
-                    <button className="order__operation">
+                    <button className="order__operation" onClick={() => dispatch({type: 'REMOVE_CART', payload: {id}})}>
                         <div className="order__icon">
                             <Times />
                         </div>
                         <p className="order__name">
-                        Remove
+                            Remove
                         </p>
                     </button>
                 </div>
             </div>
             <div className="order__desc">
                 <h5 className="order__title">
-                    Product title
+                    {name}
                 </h5>
                 <div className="order__info">
                     <span className="order__field">
@@ -56,12 +60,37 @@ function OrderItem() {
                 </div>
                 <div className="order__price">
                     <div className="number">
-                        <span className='sell__price'>
-                        36.99 USD
-                        </span>
                         <span className="real__price">
-                            48.56 USD
+                          {sellPrice}
                         </span>
+                        <span className='sell__price'>
+                        {realPrice}
+                        </span>
+                    </div>
+                    <div className="quantity">
+                        <button className="decrease" disabled ={quantity === 1} onClick={
+                            () => dispatch({
+                                type: 'DECREMENT',
+                                payload: {
+                                    product_id: id,
+                                    quantity: quantity - 1
+                                }
+                            })}
+                        >
+                            -
+                        </button>
+                        <span>{ quantity }</span>
+                        <button className="increase" onClick={
+                            () => dispatch({
+                                type: 'INCREMENT',
+                                payload: {
+                                    product_id: id,
+                                    quantity: quantity + 1
+                                }
+                                
+                            })} >
+                            +
+                        </button>
                     </div>
                 </div>
             </div>

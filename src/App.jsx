@@ -8,6 +8,7 @@ import Register from './pages/Auth/Register';
 import CategoryPage from "./pages/Category";
 import Checkout from "./pages/Checkout";
 import HomePage from "./pages/Homepage/";
+import WishList from './pages/WishList';
 import store from './store';
 function App() {
   
@@ -17,7 +18,8 @@ function App() {
       <Routes>
         <Route path = '/'  element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path='/category' element={<CategoryPage />}/>
+            <Route path='/category' element={<CategoryPage />} />
+          <Route path = '/wishlist' element = {<WishList />} />
         </Route>
         <Route path='/checkout' element={<CheckoutLayout />} >
             <Route index element={<Checkout />} />
@@ -25,7 +27,6 @@ function App() {
         <Route path='/login' element={<Login />} />
       <Route  path = '/register' element = {<Register />} />
       <Route  path = '/test' element = {<Test />} />
-    
       </Routes>
     </BrowserRouter>
 

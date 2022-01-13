@@ -8,6 +8,9 @@ import ProductList from './ProductList';
 import SideFilter from './SideFilter';
 import './style.scss';
 function CategoryPage(props) {
+
+    console.log('categorypage');
+    
     return (
         <>
         <div className="category">
@@ -55,7 +58,6 @@ function CategoryPage(props) {
                         </section>
                         <section className="products">
                             <ProductList />
-                            
                         </section>
                     </div>
                     <More />

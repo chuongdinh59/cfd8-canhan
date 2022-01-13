@@ -52,7 +52,7 @@
     &.bgcolor{
         &-default{
             background-color: transparent;
-            border: 2px solid $borderDefault;
+            // border: 2px solid $borderDefault;
             
         }
         &-bright{
@@ -71,6 +71,9 @@
         }
         &-white{
             color: $lightColor;
+        }
+        &-gray{
+            color: $productColor;
         }
     }
     svg{
